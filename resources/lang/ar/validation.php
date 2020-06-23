@@ -179,7 +179,7 @@ return [
                 ],
 
                 'banners' => [
-                    'name' => 'الاسم',
+                    'name' => 'اسم الزبون',
                     'number' => 'الرقم',
                     'description' => 'التفاصيل',
                     'location' => 'الموقع',

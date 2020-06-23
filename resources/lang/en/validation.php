@@ -187,7 +187,7 @@ return [
                 ],
 
                 'banners' => [
-                    'name' => 'Name',
+                    'name' => 'Customer Name',
                     'number' => 'Number',
                     'description' => 'Description',
                     'location' => 'Location',

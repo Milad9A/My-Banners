@@ -68,31 +68,6 @@
                             </div><!--col-->
                         </div><!--form-group-->
 
-                        <!-- Material checked -->
-                        <!-- Default checked -->
-                        <div class="custom-control custom-switch">
-                            <input name="active" type="checkbox" class="custom-control-input" id="active" {{ $banner->active ? 'checked' : '' }}>
-                            <label class="custom-control-label" for="active">Active</label>
-                        </div>
-
-{{--                        <div class="card">--}}
-{{--                        <div class="card-header">--}}
-{{--                        <div class="checkbox d-flex align-items-center">--}}
-{{--                            <label for="active">Active</label>--}}
-
-{{--                            <div class="select">--}}
-{{--                                <select name="role">--}}
-{{--                                    @foreach($roles as $role)--}}
-{{--                                        <option value="{{$role->id}}">{{$role->name}}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-
-{{--                                @error('role')--}}
-{{--                                <p class="help is-danger">{{ $message }}</p>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
                         <div class="form-group row">
                             {{ html()->label(__('validation.attributes.backend.access.banners.renting_began_at'))->class('col-md-2 form-control-label')->for('renting_began_at') }}
 
@@ -158,6 +133,11 @@
                                 </div>
 
                             </div>
+                        </div>
+
+                        <div class="custom-control custom-switch">
+                            <input name="active" type="checkbox" class="custom-control-input" id="active" {{ $banner->active ? 'checked' : '' }}>
+                            <label class="custom-control-label" for="active">Active</label>
                         </div>
 
                     </div><!--col-->

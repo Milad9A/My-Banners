@@ -46,10 +46,17 @@
                                             <td>{{ $banner->location->name }}</td>
                                         </tr>
 
-                                        <tr>
-                                            <th></th>
-                                            <td></td>
-                                        </tr>
+                                    </table>
+                                </div>
+                            </div><!--table-responsive-->
+
+
+
+
+
+                            <div class="col">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
 
                                         <tr>
                                             <th>
@@ -61,18 +68,14 @@
                                         @foreach($banner->rents as $rent)
 
                                             <tr>
-                                                <th>@lang('labels.backend.access.banners.tabs.content.overview.renting_began_at')</th>
-                                                <td>{{ $rent->renting_began_at }}</td>
-                                            </tr>
-
-                                            <tr>
-                                                <th>@lang('labels.backend.access.banners.tabs.content.overview.renting_ends_at')</th>
-                                                <td>{{ $rent->renting_ends_at  }}</td>
-                                            </tr>
-
-                                            <tr>
                                                 <th>@lang('labels.backend.access.banners.tabs.content.overview.name')</th>
                                                 <td>{{ $rent->customer_name }}</td>
+
+                                                <th>@lang('labels.backend.access.banners.tabs.content.overview.renting_began_at')</th>
+                                                <td>{{ $rent->renting_began_at}}</td>
+
+                                                <th>@lang('labels.backend.access.banners.tabs.content.overview.renting_ends_at')</th>
+                                                <td>{{ $rent->renting_ends_at  }}</td>
                                             </tr>
 
                                         @endforeach
@@ -80,6 +83,10 @@
                                     </table>
                                 </div>
                             </div><!--table-responsive-->
+
+
+
+
 
                         </div><!--tab-->
                     </div><!--tab-content-->
@@ -93,6 +100,8 @@
             </button>
 
             <!-- Modal -->
+
+
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -177,8 +186,8 @@
 
 
         </div><!--card-body-->
-        <div class="card-footer">
 
+        <div class="card-footer">
 
             <div class="row">
                 <form action="{{ route('admin.auth.banner.edit', compact('banner')) }}">
