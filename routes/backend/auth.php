@@ -102,8 +102,11 @@ Route::group([
 
     Route::group(['namespace' => 'Location'], function (){
         Route::get('location', [LocationsController::class, 'index'])->name('location.index');
-
+        Route::post('location', [LocationsController::class, 'store'])->name('location.store');
         Route::get('location/create', [LocationsController::class, 'create'])->name('location.create');
+        Route::get('location/{location}/edit', [LocationsController::class, 'edit'])->name('location.edit');
+        Route::patch('location/{location}', [LocationsController::class, 'update'])->name('location.update');
+        Route::get('location/{location}/delete', [LocationsController::class, 'destroy'])->name('location.destroy');
     });
 
     Route::group(['namespace' => 'Rent'], function (){

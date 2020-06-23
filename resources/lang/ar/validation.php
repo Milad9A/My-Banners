@@ -187,6 +187,10 @@ return [
                     'renting_began_at' => 'بداية الاستئجار',
                     'renting_ends_at' => 'نهاية الاستئجار',
                 ],
+
+                'locations' => [
+                    'name' => 'الاسم'
+                ],
             ],
         ],
 

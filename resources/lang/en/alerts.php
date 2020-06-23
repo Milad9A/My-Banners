@@ -38,6 +38,11 @@ return [
             'created' => 'The banner was successfully created.',
             'updated' => 'The banner was successfully updated.',
         ],
+
+        'locations' => [
+            'created' => 'The Location was successfully created',
+            'updated' => 'The Location was successfully updated',
+        ]
     ],
 
     'frontend' => [

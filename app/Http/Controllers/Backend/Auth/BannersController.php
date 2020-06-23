@@ -60,8 +60,8 @@ class BannersController extends Controller
 
         $rent = new Rent(request()->validate([
             'customer_name' => 'required',
-            'renting_began_at' => 'required',
-            'renting_ends_at' => 'required',
+            'renting_began_at' => 'required|before:renting_ends_at',
+            'renting_ends_at' => 'required|after:renting_began_at',
         ]));
 
         $rent['banner_id'] = $banner->id;
@@ -139,15 +139,15 @@ class BannersController extends Controller
         }
 
         if ($request->renting_began_at) {
-            $banner->rents->last()->update([
-                'renting_began_at' => $request['renting_began_at'],
-            ]);
+            $banner->rents->last()->update(request()->validate([
+                'renting_began_at' => 'required|before:renting_ends_at',
+            ]));
         }
 
         if ($request->renting_ends_at) {
-            $banner->rents->last()->update([
-                'renting_ends_at' => $request['renting_ends_at'],
-            ]);
+            $banner->rents->last()->update(request()->validate([
+                'renting_ends_at' => 'required|after:renting_began_at',
+            ]));
         }
 
         return redirect()->route('admin.auth.banner.index')->withFlashSuccess(__('alerts.backend.banners.updated'));

@@ -195,6 +195,10 @@ return [
                     'renting_began_at' => 'Renting Started at',
                     'renting_ends_at' => 'Renting Ended at',
                 ],
+
+                'locations' => [
+                    'name' => 'Name'
+                ],
             ],
         ],
 

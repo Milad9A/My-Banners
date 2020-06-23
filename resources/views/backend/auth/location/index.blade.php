@@ -30,9 +30,13 @@
                         <table class="table">
                             <tbody>
                             @foreach($locations as $location)
-                                <tr>
-                                    <td>{{ $location->name }}</td>
-                                </tr>
+                                <a href="{{ route('admin.auth.location.edit', compact('location')) }}">
+                                    <tr>
+                                        <td>{{ $location->name }}</td>
+                                        <td class="btn-td" style="width: 0px">@include('backend.auth.location.includes.actions', ['location' => $location])</td>
+                                    </tr>
+                                </a>
+
                             @endforeach
                             </tbody>
                         </table>
@@ -43,7 +47,7 @@
             <div class="row">
                 <div class="col-7">
                     <div class="float-left">
-{{--                         {!! $banners->total() !!} {{ trans_choice('labels.backend.access.roles.table.total', $banners->total()) }}--}}
+                        {{--                         {!! $banners->total() !!} {{ trans_choice('labels.backend.access.roles.table.total', $banners->total()) }}--}}
                     </div>
                 </div>
                 <!--col-->

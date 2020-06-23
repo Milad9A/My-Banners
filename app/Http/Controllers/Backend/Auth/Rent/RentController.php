@@ -12,16 +12,14 @@ class RentController extends Controller
     public function store(Request $request){
         $rent = new Rent(request()->validate([
             'customer_name' => 'required',
-            'renting_began_at' => 'required',
-            'renting_ends_at' => 'required',
+            'renting_began_at' => 'required|before:renting_ends_at',
+            'renting_ends_at' => 'required|after:renting_began_at',
         ]));
 
-        $rent['banner_id'] = 1;
+        $rent['banner_id'] = $request['banner_id'];
 
         $rent->save();
 
-        $banner = Banner::findOrFail(1);
-
-        return redirect()->route('admin.auth.banner.show', compact('banner'));
+        return redirect()->back();
     }
 }

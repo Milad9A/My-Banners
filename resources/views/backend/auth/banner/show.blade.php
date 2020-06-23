@@ -104,8 +104,10 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{ route('admin.auth.rent.store', ['id' => $banner->id]) }}" method="POST">
+                            <form action="{{ route('admin.auth.rent.store') }}" method="POST">
                                 @csrf
+
+                                <input type="hidden" name="banner_id" value="{{ $banner->id }}">
 
                                 <div class="field">
                                     <label for="customer_name">Customer's Name</label>
