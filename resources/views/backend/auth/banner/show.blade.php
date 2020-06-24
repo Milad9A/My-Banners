@@ -83,6 +83,9 @@
                                         <th>@lang('labels.backend.access.banners.tabs.content.overview.renting_ends_at')
                                         </th>
                                         <td>{{ $rent->renting_ends_at  }}</td>
+
+                                        <td class="btn-td" style="width: 0px">@include('backend.auth.banner.includes.actions', ['rent' => $rent])</td>
+
                                     </tr>
 
                                     @endforeach

@@ -22,4 +22,11 @@ class RentController extends Controller
 
         return redirect()->back();
     }
+
+    public function destroy($id)
+    {
+        $rent = Rent::findOrFail($id);
+        $rent->delete();
+        return redirect()->back();
+    }
 }

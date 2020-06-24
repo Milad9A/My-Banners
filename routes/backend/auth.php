@@ -111,5 +111,6 @@ Route::group([
 
     Route::group(['namespace' => 'Rent'], function (){
         Route::post('banner/rent', [RentController::class, 'store'])->name('rent.store');
+        Route::get('banner/rent/{rent}/delete', [RentController::class, 'destroy'])->name('rent.destroy');
     });
 });
