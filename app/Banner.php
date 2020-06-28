@@ -34,9 +34,6 @@ class Banner extends Model
 
     public function currentlyAvailable()
     {
-        if($this->rents()->count() === 0) return true;
-        $b = $this->rents->last()->renting_began_at;
-        $e = $this->rents->last()->renting_ends_at;
-        return !(($b < NOW() && $e > NOW()) && $b && $e);
+        return $this->available;
     }
 }

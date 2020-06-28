@@ -19,6 +19,7 @@ class CreateBannersTable extends Migration
             $table->string('image');
             $table->unsignedBigInteger('number');
             $table->text('description');
+            $table->boolean('available')->default(1);
             $table->boolean('active')->default(1);
             $table->timestamps();
 
