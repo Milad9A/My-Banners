@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Banner;
 use App\Http\Controllers\Controller;
 
 /**
@@ -14,6 +15,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $banners = Banner::all();
+        return view('frontend.index', compact('banners'));
+    }
+
+    public function getByLocation($id)
+    {
+        $banners = Banner::all()->where('location_id', $id);
+        return view('frontend.index', compact('banners'));
+    }
+
+    public function show($id){
+        $banner = Banner::findOrFail($id);
+        return view('frontend.show', compact('banner'));
     }
 }

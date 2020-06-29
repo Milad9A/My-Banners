@@ -11,6 +11,11 @@ use App\Http\Controllers\Frontend\User\ProfileController;
  * All route names are prefixed with 'frontend.'.
  */
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+Route::get('banner/location/{location}', [HomeController::class, 'getByLocation'])->name('banner.location');
+
+Route::get('banner/{banner}', [HomeController::class, 'show'])->name('banner.show');
+
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 
