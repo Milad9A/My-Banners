@@ -76,18 +76,18 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         // Check to see if the users account is confirmed and active
-        if (! $user->isConfirmed()) {
-            auth()->logout();
-
-            // If the user is pending (account approval is on)
-            if ($user->isPending()) {
-                throw new GeneralException(__('exceptions.frontend.auth.confirmation.pending'));
-            }
-
-            // Otherwise see if they want to resent the confirmation e-mail
-
-            throw new GeneralException(__('exceptions.frontend.auth.confirmation.resend', ['url' => route('frontend.auth.account.confirm.resend', e($user->{$user->getUuidName()}))]));
-        }
+//        if (! $user->isConfirmed()) {
+//            auth()->logout();
+//
+//            // If the user is pending (account approval is on)
+//            if ($user->isPending()) {
+//                throw new GeneralException(__('exceptions.frontend.auth.confirmation.pending'));
+//            }
+//
+//            // Otherwise see if they want to resent the confirmation e-mail
+//
+//            throw new GeneralException(__('exceptions.frontend.auth.confirmation.resend', ['url' => route('frontend.auth.account.confirm.resend', e($user->{$user->getUuidName()}))]));
+//        }
 
         if (! $user->isActive()) {
             auth()->logout();

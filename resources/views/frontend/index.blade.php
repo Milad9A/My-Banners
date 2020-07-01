@@ -21,7 +21,7 @@
                         <div class="dropdown show" style="margin-right: 0px">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Banners
+                                {{ (URL::current() === route('frontend.index')) ? 'All Banners' : \App\Location::findOrFail(Str::afterLast(URL::current(), '/'))->name }}
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

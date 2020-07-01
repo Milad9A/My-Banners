@@ -116,10 +116,10 @@ class UserRepository extends BaseRepository
              *
              * If this is a social account they are confirmed through the social provider by default
              */
-            if (config('access.users.confirm_email')) {
-                // Pretty much only if account approval is off, confirm email is on, and this isn't a social account.
-                $user->notify(new UserNeedsConfirmation($user->confirmation_code));
-            }
+//            if (config('access.users.confirm_email')) {
+//                // Pretty much only if account approval is off, confirm email is on, and this isn't a social account.
+//                $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+//            }
 
             // Return the user object
             return $user;
